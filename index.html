@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RPG-Game</title>
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="assets/style/style.css">
+	<!-- JQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- javascript -->
+    <script src="assets/javascript/app.js"></script>
+    <!-- Bootstrap File -->
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+</head>
+<body>
+
+	<div id="title" class="row">
+		RPS-Game
+	</div>
+
+	<div id="player" class="row color"> 
+		Name
+	</div>
+
+	<div id="turn" class="row color"> 
+		Whos turn
+	</div>
+
+	<div id="playerContainer" class="row">
+
+		<div class="col-md-3 col-md-offset-1 playerDiv">
+
+			<div class="row">Name</div>
+			<div class="row choice p1">Rock</div>
+			<div class="row choice p1">Paper</div>
+			<div class="row choice p1">Sissors</div>
+			<div class="row wLCount">Wins:0 Losses:0</div>
+			
+		</div>
+
+		<div id="winLoose" class="col-md-2 col-md-offset-1 playerDiv">
+			<div class="row"></div>
+		</div>
+
+		<div class="col-md-3 col-md-offset-1 playerDiv">
+
+			<div class="row">Name</div>
+			<div class="row choice p1">Rock</div>
+			<div class="row choice p1">Paper</div>
+			<div class="row choice p1">Sissors</div>
+			<div class="row wLCount">Wins:0 Losses:0</div>
+
+		</div>
+
+	</div>
+
+	<div class="row">
+		
+		<textarea rows="8" cols="100">
+		 
+		</textarea>
+
+		<form id="form">
+			<!-- <label for="input">Add instrument here</label> -->
+			<input id="input" type="text">
+
+			<input id="addinput" class="btn btn-primary" type="submit" value="submit">
+		</form>
+
+	</div>
+	
+
+</body>
+</html>
