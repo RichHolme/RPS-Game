@@ -1,15 +1,11 @@
 body{
 	background-color: #0A0E60 !important;
-	overflow: hidden;
+	overflow-x: hidden;
 }
 
 #playerContainer{
 	/*overflow: hidden;*/
 }
-
-/*#winLoose{
-	height: 200px !important;
-}*/
 
 .playerDiv{
 	margin-top: 30px !important;
@@ -72,4 +68,13 @@ textarea{
 
 .wLCount{
 	font-size: 15px;
+}
+
+.input-group{
+	width: 300px;
+	margin: 0 auto;
+}
+
+.yellow{
+	border: solid yellow 2px;
 }
