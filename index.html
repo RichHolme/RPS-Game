@@ -12,17 +12,20 @@
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   	<!-- Firebase Reference -->
     <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js"></script>
+    <!-- google fonts -->
+  	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 
 </head>
 <body>
 
 	<div id="title" class="row">
-		RPS-Game
+		Rock Paper Sissors
 	</div>
 
 	<div id="playerName" class="row color"> 
 		<div class="input-group">
-   			<input  type="text" class="form-control nameOf">
+   			<input  id="inputName" type="text" class="form-control nameOf">
    			<span class="input-group-btn">
         		<button id="start" class="btn btn-primary" type="button">Start</button>
    			</span>
@@ -52,7 +55,7 @@
 			<div id="player1chose">
 				<div id="player1choose" class="row choice"></div>
 			</div>
-			<div class="row wLCount">Wins:0 Losses:0</div>
+			<div class="row wLCount1">Wins:0 Losses:0</div>
 			
 		</div>
 
@@ -71,7 +74,7 @@
 			<div id="player2chose">
 				<div id="player2choose" class="row choice"></div>
 			</div>
-			<div class="row wLCount">Wins:0 Losses:0</div>
+			<div class="row wLCount2">Wins:0 Losses:0</div>
 
 		</div>
 
@@ -79,7 +82,7 @@
 
 	<div class="row">
 		
-		<textarea rows="6" cols="100">
+		<textarea id="textHere" rows="6" cols="100">
 		 
 		</textarea>
 

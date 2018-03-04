@@ -1,6 +1,10 @@
 body{
-	background-color: #0A0E60 !important;
+	/*background-color: #2A5D5D !important;*/
+	background-image: url(../images/background.jpg);
 	overflow-x: hidden;
+	background-repeat: no-repeat;
+	height: 100%;
+	background-size: cover;
 }
 
 #playerContainer{
@@ -10,57 +14,78 @@ body{
 .playerDiv{
 	margin-top: 30px !important;
 	height: 205px !important;
-	border: solid #07123E 2px;
-	background-color: #FFFAF1;
-	padding: 15px;
+	border: solid #3F3E4F 1px;
+	background-color: #F2F4F9;
+	padding: 10px;
 	color: #07132E;
-}
-
-.black{
-	border: solid #07123E 2px;
+	/*opacity: .9;*/
 }
 
 .row{
 	text-align: center;
 	font-size: 20px;
-	padding-bottom: 5px;
+	padding-bottom: 4px;
 }
 
 #title{
-	background-color: #FFFAF1;
-	font-size: 40px;
+	/*background-color: #F2F4F9;*/
+	font-size: 80px;
+	font-weight: bold;
 	padding: 15px;
 	margin: 10px;
-	border: solid #07123E 2px;
-	color: #07123E;
+	/*border: solid #3F3E4F 1px;*/
+	color: #930327;
+	font-family: 'Lora', serif;
+	font-style: italic;
 }
 
 textarea{
 	/*margin-top: 60px !important;
 	margin-left: 380px !important;*/
 	margin-top: 50px !important;
-	background-color: #FFFAF1 !important;
+	background-color: #F2F4F9 !important;
 	color: #07132E !important;
-
+	border: solid #3F3E4F 1px !important;
+	padding: 0px !important;
+	/*opacity: .9 !important;*/
 }
 
 #input{
 	/*margin-left: 380px !important*/
 	margin-top: 10px !important;
 	width: 63%;
-	background-color: #FFFAF1 !important;
+	background-color: #F2F4F9 !important;
+	border: solid #3F3E4F 1px !important;
 	color: #07132E !important;
+	/*opacity: .9 !important;*/
+}
+
+#inputName{
+	border: solid #3F3E4F 1px !important;
+	background-color: #F2F4F9 !important;
+	/*opacity: .9 !important;*/
 }
 
 .color{
-	color: #FFFAF1;
+	color: #930327;
+	font-family: 'Lora', serif;
+	font-weight: bold;
+	font-size: 25px;
 }
 
 #addinput{
-	background-color: #DF0D00 !important;
+	background-color: #D84634 !important;
 	/*border: solid #07123E 1px !important;*/
-	color: #FFFAF1;
+	margin-top: -5px;
+	color: #F2F4F9;
 }
+
+#start{
+	background-color: #D84634 !important;
+	/*border: solid #07123E 1px !important;*/
+	color: #F2F4F9;
+}
+
 
 #player{
 	margin-top: 15px;
@@ -81,4 +106,8 @@ textarea{
 
 .yellow{
 	border: solid yellow 2px;
+}
+
+#playerInfo{
+	/*background-color: white;*/
 }
