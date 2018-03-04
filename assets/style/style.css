@@ -16,6 +16,10 @@ body{
 	color: #07132E;
 }
 
+.black{
+	border: solid #07123E 2px;
+}
+
 .row{
 	text-align: center;
 	font-size: 20px;
