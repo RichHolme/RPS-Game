@@ -32,7 +32,7 @@ body{
 	font-size: 80px;
 	font-weight: bold;
 	padding: 15px;
-	margin: 10px;
+	margin: 0px 10px 10px 10px;
 	/*border: solid #3F3E4F 1px;*/
 	color: #930327;
 	font-family: 'Lora', serif;
@@ -86,13 +86,8 @@ textarea{
 	color: #F2F4F9;
 }
 
-
-#player{
-	margin-top: 15px;
-}
-
 .choice{
-	font-size: 28px;
+	font-size: 32px;
 }
 
 .wLCount{
@@ -109,5 +104,44 @@ textarea{
 }
 
 #playerInfo{
-	/*background-color: white;*/
+	background-color: #F2F4F9;
+	width: 20%;
+	margin: 0 auto;
+	/*padding: -5px;*/
+	border: solid #3F3E4F 1px;
+}
+
+#play2Btn{
+	background-color: #D84634 !important;
+	color: #F2F4F9;
+}
+
+#play2Container{
+	text-align: center;
+	border: solid #3F3E4F 1px;
+	background-color: #F2F4F9;
+	width: 35%;
+	margin: 0 auto;
+	padding: 5px;
+}
+
+#playerBtn{
+	text-align: center;
+	margin-top: 10px;
+}
+
+#whoWon{
+	font-size: 32px;
+}
+
+#player1{
+	font-size: 25px;
+}
+
+#player2{
+	font-size: 25px;
+}
+
+.p{
+	margin: -5px;
 }

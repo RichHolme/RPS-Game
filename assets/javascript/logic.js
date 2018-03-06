@@ -9,6 +9,8 @@ $(document).ready(function() {
   $("#player1chose").hide();
   $("#player2chose").hide();
   $("#playerInfo").hide();
+  $("#play2Container").hide();
+  $("#playerBtn").hide();
 
   // empty holder for names
 	var player = '';
@@ -40,40 +42,43 @@ $(document).ready(function() {
 
   // holds lines of chat
   var chatLines = 0;
-  // var chatLines2 = 0;
+
+  var exists = null;
+  exists2 = null;
 
 	// Initialize Firebase
-  	var config = {
-    	apiKey: "AIzaSyCL1PCObmLnajeuDajY868n5ovpGMli70U",
-    	authDomain: "rich-rps.firebaseapp.com",
-    	databaseURL: "https://rich-rps.firebaseio.com",
-    	projectId: "rich-rps",
-    	storageBucket: "",
-    	messagingSenderId: "6293674215"
-  	};
+  var config = {
+  	apiKey: "AIzaSyCL1PCObmLnajeuDajY868n5ovpGMli70U",
+  	authDomain: "rich-rps.firebaseapp.com",
+  	databaseURL: "https://rich-rps.firebaseio.com",
+  	projectId: "rich-rps",
+  	storageBucket: "",
+  	messagingSenderId: "6293674215"
+  };
 
-  	firebase.initializeApp(config);
+  firebase.initializeApp(config);
 
-  	var database = firebase.database();
+  var database = firebase.database();
 
-    // player 1 and 2 refrences
-    player1_ref = database.ref().child('Player1');
-    player2_ref = database.ref().child('Player2');
+  // player 1 and 2 refrences
+  player1_ref = database.ref().child('Player1');
+  player2_ref = database.ref().child('Player2');
 
-    // chat refrence
-    chat_ref = database.ref().child('chat');
+  // chat refrence
+  chat_ref = database.ref().child('chat');
 
-    // clean out database on page reload
-  	function playerClear(){
-  		if(numName == 0){
-  			database.ref("Player1").remove();
-  			database.ref("Player2").remove();
-        database.ref("chat").remove();
-  		}
-  	}
-
-    // call clear
-  	playerClear();
+  $(window).on('unload', function(){
+    if(playerid == 1){
+      player1_ref.remove();
+      chat_ref.remove();
+      // reset();
+    }else{
+      player2_ref.remove();
+      chat_ref.remove();
+      // reset();
+    }
+    
+  })
 
   // listen for any data changes
  	database.ref().on("value", function(snapshot) {
@@ -81,13 +86,70 @@ $(document).ready(function() {
     // when player 1 is added
     if (snapshot.child("Player1").exists()){
 
-    // increment to identify player function to call
-    numName++;
+      // increment to identify player function to call
+      numName++;
+
+    }
+
+    if(!snapshot.child("Player1").exists() && exists == true){
+
+      // $("#textHere").append('1disconnected');
+      if(chatLines == 0){
+    
+        chatLines++
+
+        $("#textHere").text('Player 1 disconnected' + '\n');
+
+        $("#play2info").text('Player 1 disconnected. Would you like to play again?')
+
+      }else if(chatLines != 0){
+    
+        $("#textHere").append('Player 1 disconnected' + '\n');
+
+        $("#play2info").text('Player 1 disconnected. Would you like to play again?')
+      }
+
+      $("#playerInfo").hide();
+      $("#playerContainer").hide();
+      // reset();
+      $("#play2Container").show();
+      $("form").hide();
+      $("#playerBtn").show();
+
+    }
+
+    if(!snapshot.child("Player2").exists() && exists == true){
+
+      // $("#textHere").append('2disconnected');
+      if(chatLines == 0){
+    
+        chatLines++
+
+        $("#textHere").text('Player 2 disconnected' + '\n');
+
+        $("#play2info").text('Player 2 disconnected. Would you like to play again?')
+
+      }else if(chatLines != 0){
+    
+        $("#textHere").append('Player 2 disconnected' + '\n');
+
+        $("#play2info").text('Player 2 disconnected. Would you like to play again?')
+      }
+
+      $("#playerInfo").hide();
+      $("#playerContainer").hide();
+      // reset();
+      $("#play2Container").show();
+      // reset();
+      $("form").hide();
+      $("#playerBtn").show();
 
     }
 
     // when payer 1 and 2 are added
  		if (snapshot.child("Player1").exists() && snapshot.child("Player2").exists()){
+
+      exists = true;
 
       // id choice1 is empty 
       if(choice1 == ""){
@@ -181,6 +243,7 @@ $(document).ready(function() {
     // if not true
     if(!p1){
 
+      // console.log(exists2 + 'p1')
       // grab name
       p1 = snapshot.val();
 
@@ -248,6 +311,11 @@ $(document).ready(function() {
     // grab update
     var wins = snapshot.val();
 
+    // this prevents start screen from dispalying null
+    if(wins == null){
+      wins = 0;
+    }
+
     // display update
     $(".wLCount1").text('Wins: ' + wins + ' Losses: ' + p1Loss)
 
@@ -274,6 +342,11 @@ $(document).ready(function() {
 
     // grab update
     var wins = snapshot.val();
+
+    // this prevents start screen from dispalying null
+    if(wins == null){
+      wins = 0;
+    }
 
     // display update
     $(".wLCount2").text('Wins: ' + wins + ' Losses: ' + p2Loss)
@@ -303,9 +376,10 @@ $(document).ready(function() {
 
     // clean out input
   	$('.nameOf').val(' ');
-  		
+
     // calls player 1 function
 		player1();
+    
 
   });
 
@@ -321,10 +395,16 @@ $(document).ready(function() {
       // show status
       $("#playerInfo").show();
 
+      if(exists != true){
+
       // update name and status
       $("#player").text('Hey ' + player + '! Your player 1.');
       $("#turn").text('Wating for player 2.');
 
+      }else{
+        $("#player").text('Hey ' + player + '! Your player 1.');
+        $("#turn").text('Your turn.');
+      }
       // set object for database
     	player1_ref.set({
         id: 1,
@@ -355,9 +435,16 @@ $(document).ready(function() {
     // show status
     $("#playerInfo").show();
 
-    // update name and status
-    $("#player").text('Hey ' + player + '! Your player 2.');
-    $("#turn").text('Wating for player 1.');
+    if(exists != true){
+
+      // update name and status
+      $("#player").text('Hey ' + player + '! Your player 2.');
+      $("#turn").text('Wating for player 2.');
+
+    }else{
+        $("#player").text('Hey ' + player + '! Your player 2.');
+        $("#turn").text('Your turn.');
+    }
 
     // player 2 object for database
   	player2_ref.set({
@@ -714,5 +801,9 @@ $(document).ready(function() {
         wins: p2Wins
       })
   }
+
+  $("#play2Btn").on('click', function(){
+    location.reload();
+  })
 
 });
