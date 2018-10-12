@@ -1,6 +1,6 @@
 body{
 	/*background-color: #2A5D5D !important;*/
-	background-image: url(../images/background.jpg);
+	/*background-image: url(../images/background.jpg);*/
 	overflow-x: hidden;
 	background-repeat: no-repeat;
 	height: 100%;
@@ -47,6 +47,7 @@ textarea{
 	color: #07132E !important;
 	border: solid #3F3E4F 1px !important;
 	padding: 0px !important;
+	height: 200px;
 	/*opacity: .9 !important;*/
 }
 
@@ -144,4 +145,68 @@ textarea{
 
 .p{
 	margin: -5px;
+}
+
+@media only screen and (max-width: 1024px){
+
+}
+
+@media only screen and (max-width: 768px){
+
+}
+
+@media only screen and (max-width: 415px){
+	#title{
+		font-size: 45px;
+	}
+
+	textarea{
+		width: 380px !important;
+		margin-left: 15px !important;
+	}
+
+	#playerInfo{
+		height: 150px !important;
+		width: 380px;
+		/*margin-left: 15px;*/
+	}
+
+	#player1Div,
+	#player2Div,
+	#winLoose{
+		height: 150px !important;
+		width: 380px;
+		margin-left: 15px;
+	}
+}
+
+@media only screen and (max-width: 376px){
+
+	textarea{
+		width: 340px !important;
+		margin-left: 10px !important;
+	}
+
+	#playerInfo{
+		width: 330px;
+		margin-left: 0px;
+		/*margin-right: 25px !important;*/
+	}
+
+	#player1Div,
+	#player2Div,
+	#winLoose{
+		/*height: 150px !important;*/
+		width: 340px;
+		margin-left: 10px;
+	}
+
+}
+
+@media only screen and (max-width: 360px){
+
+}
+
+@media only screen and (max-width: 320px){
+	
 }

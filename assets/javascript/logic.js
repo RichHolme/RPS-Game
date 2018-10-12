@@ -807,3 +807,6 @@ $(document).ready(function() {
   })
 
 });
+
+// this code may help
+ // database.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot)

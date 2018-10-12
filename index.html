@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>RPG-Game</title>
+	<title>RPS-Game</title>
 	<!-- css -->
 	<link rel="stylesheet" type="text/css" href="assets/style/style.css">
 	<!-- JQuery -->
@@ -21,94 +21,98 @@
 </head>
 <body>
 
-	<div id="title" class="row">
+	<div class="container">
+		
+		<div id="title" class="row">
 		Rock Paper Scissors
-	</div>
-
-	<div id="playerName" class="row color"> 
-		<div class="input-group">
-   			<input  id="inputName" type="text" placeholder="Enter name to start" class="form-control nameOf">
-   			<span class="input-group-btn">
-        		<button id="start" class="btn btn-primary" type="button">Start</button>
-   			</span>
 		</div>
-	</div>
 
-	<div id="play2Container">
+		<div id="playerName" class="row color"> 
+			<div class="input-group">
+	   			<input  id="inputName" type="text" placeholder="Enter name to start" class="form-control nameOf">
+	   			<span class="input-group-btn">
+	        		<button id="start" class="btn btn-primary" type="button">Start</button>
+	   			</span>
+			</div>
+		</div>
 
-		<div id="play2info" class="row color"></div>
-	
-	</div>
-	
-	<div id="playerBtn">
+		<div id="play2Container">
+
+			<div id="play2info" class="row color"></div>
 		
-		<button id="play2Btn" class="btn btn-primary" type="button">Play Again</button>
-
-	</div>
-
-	<div id="playerInfo">
-		<div id="player" class="row color"> 
-			Name
 		</div>
-
-		<div id="turn" class="row color"> 
-			Whos turn
-		</div>
-	</div>
-
-	<div id="playerContainer" class="row">
-
-		<div id="player1Div" class="col-md-3 col-md-offset-1 playerDiv">
-
-			<div id='player1' class="row"></div>
-			<div id="player1choices">
-				<div class="row choice p" data-attr="rock">Rock</div>
-				<div class="row choice p">Paper</div>
-				<div class="row choice p">Sissors</div>
-			</div>
-			<div id="player1chose">
-				<div id="player1choose" class="row choice"></div>
-			</div>
-			<div class="row wLCount1">Wins:0 Losses:0</div>
+		
+		<div id="playerBtn">
 			
+			<button id="play2Btn" class="btn btn-primary" type="button">Play Again</button>
+
 		</div>
 
-		<div id="winLoose" class="col-md-2 col-md-offset-1 playerDiv">
-			<div id="whoWon" class="row"></div>
+		<div id="playerInfo">
+			<div id="player" class="row color"> 
+				Name
+			</div>
+
+			<div id="turn" class="row color"> 
+				Whos turn
+			</div>
 		</div>
 
-		<div id="player2Div" class="col-md-3 col-md-offset-1 playerDiv">
+		<div id="playerContainer" class="row">
 
-			<div id='player2' class="row"></div>
-			<div id="player2choices">
-				<div class="row choice p">Rock</div>
-				<div class="row choice p">Paper</div>
-				<div class="row choice p">Sissors</div>
+			<div id="player1Div" class="col-md-3 col-md-offset-1 col-sm-offset-1 col-sm-10  col-xs-12 playerDiv">
+
+				<div id='player1' class="row"></div>
+				<div id="player1choices">
+					<div class="row choice p" data-attr="rock">Rock</div>
+					<div class="row choice p">Paper</div>
+					<div class="row choice p">Sissors</div>
+				</div>
+				<div id="player1chose">
+					<div id="player1choose" class="row choice"></div>
+				</div>
+				<div class="row wLCount1">Wins:0 Losses:0</div>
+				
 			</div>
-			<div id="player2chose">
-				<div id="player2choose" class="row choice"></div>
+
+			<div id="winLoose" class="col-md-2 col-sm-offset-1 col-sm-10 col-xs-12 col-md-offset-1 playerDiv">
+				<div id="whoWon" class="row"></div>
 			</div>
-			<div class="row wLCount2">Wins:0 Losses:0</div>
+
+			<div id="player2Div" class="col-md-3 col-sm-offset-1 col-sm-10 col-xs-12 col-md-offset-1 playerDiv">
+
+				<div id='player2' class="row"></div>
+				<div id="player2choices">
+					<div class="row choice p">Rock</div>
+					<div class="row choice p">Paper</div>
+					<div class="row choice p">Sissors</div>
+				</div>
+				<div id="player2chose">
+					<div id="player2choose" class="row choice"></div>
+				</div>
+				<div class="row wLCount2">Wins:0 Losses:0</div>
+
+			</div>
+
+		</div>
+
+		<div class="row">
+			<!-- rows="6" cols="100" -->
+			
+			<textarea id="textHere" class="col-md-12 col-md-offset-0 col-sm-offset-1 col-sm-10 col-xs-12">
+			 
+			</textarea>
+
+			<form id="form">
+				<!-- <label for="input">Add instrument here</label> -->
+				<input id="input" type="text">
+
+				<input id="addinput" class="btn btn-primary" type="submit" value="submit">
+			</form>
 
 		</div>
 
 	</div>
-
-	<div class="row">
-		
-		<textarea id="textHere" rows="6" cols="100">
-		 
-		</textarea>
-
-		<form id="form">
-			<!-- <label for="input">Add instrument here</label> -->
-			<input id="input" type="text">
-
-			<input id="addinput" class="btn btn-primary" type="submit" value="submit">
-		</form>
-
-	</div>
-	
 
 </body>
 </html>
