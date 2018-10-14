@@ -439,7 +439,7 @@ $(document).ready(function() {
 
       // update name and status
       $("#player").text('Hey ' + player + '! Your player 2.');
-      $("#turn").text('Wating for player 2.');
+      $("#turn").text('Wating for player 1.');
 
     }else{
         $("#player").text('Hey ' + player + '! Your player 2.');
