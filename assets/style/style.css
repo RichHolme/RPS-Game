@@ -1,5 +1,5 @@
 body{
-	/*background-color: #2A5D5D !important;*/
+	/*background-color: lightgray !important;*/
 	/*background-image: url(../images/background.jpg);*/
 	overflow-x: hidden;
 	background-repeat: no-repeat;
@@ -89,6 +89,7 @@ textarea{
 
 .choice{
 	font-size: 32px;
+	cursor: pointer;
 }
 
 .wLCount{
@@ -108,7 +109,7 @@ textarea{
 	background-color: #F2F4F9;
 	width: 20%;
 	margin: 0 auto;
-	/*padding: -5px;*/
+	padding: 5px;
 	border: solid #3F3E4F 1px;
 }
 
