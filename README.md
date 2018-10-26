@@ -23,3 +23,5 @@ Chat:
 - Chat was made with Firebase.
 - Enter your message and click submit.
 - You and your opponent will get live updates of messages as long as both players are connected.
+
+Site: https://richholme.github.io/RPS-Game/ (remember to open in two tabs the game requires both players to be connected)
